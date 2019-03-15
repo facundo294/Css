@@ -1,0 +1,54 @@
+/* Especificidad de los selectores: */
+
+a {font-size: 80pt;}
+a {font-size: 30pt}
+
+a {color: green;}
+a#contacto {color:red;} 
+a {color: black;} 
+/* Todos los a(links) quedaran de color negro, excepto el link con id="contacto" que sera de color rojo, ya que tiene una mayor
+especificidad */
+
+
+/* Pseudoclases */
+a:hover{background: orange;}
+p.cuerpo:first-letter {font-size: 25pt;}
+#nombre:focus{border: 2px solid red;} /* Hover y Focus se pueden considerar eventos del navegador */
+
+p > em {color:red;} /* Modifica todos los elementos em que sean hijos directos de un parrafo */
+
+ul.ingredientes li:nth-child(2) {color: maroon;} /* El tercer li de cualquier lista ul */
+table#poblacion tr:nth-child(even) {background:yellow;} /*  las filas en posicion par */
+input.contacto[type="text"] {border: 3px dashed blue;} /*   los input clase contacto que sean tipo texto */
+select#paises option[value] {font-weight: bold;} 
+/* Todos los option que tengan definido algun value, dentro de un select con id paises. */
+#noticias p:not(.destacados) {font-size: 9pt;} 
+/* Todos los parrafos que no pertenezcan a la clase "destacados" que 
+se encuentran dentro de un elemento con id "noticias" */
+input.contacto:not([type="text"]){color:blue;}
+
+p {color:red; border: 2px solid blue;}
+#borde{border: 2px solid blue;}
+/* Algunas reglas se heredan a los hijos y otras no, por ejemplo el color de fondo no se hereda ni 
+el subrayado de texto, se hereda solo lo que se cree conveniente, como el tipo de letra */
+
+p {color: red;}
+strong {color: blue;} /* Que sucede en este caso?  */
+
+strong {color: blue;}
+p {color: red;} /* Que sucede en este caso? En ambos tienen especificidad 1  */
+
+/* Todos estos selectores pueden utilizarse para modificar lo mismo aunque
+algunos tienen mas especificidad que otros */
+p {}                      /* Especificidad = 1   */
+div p{}                   /* Especificidad = 2   */
+p.resumenes {}            /* Especificidad = 11  */ 
+p#primero{}               /* Especificidad = 101 */
+div p#primero{}           /* Especificidad = 102 */   
+div#contenido p#primero{} /* Especificidad = 202 */
+
+/* El navegador hace el siguiente calculo, por cada nombre de etiqueta suma una unidad
+   Por cada nombre de clase suma una decena, y por cada identificador suma una centena */
+
+
+

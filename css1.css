@@ -1,0 +1,38 @@
+
+h2 {  /* En este caso h2 es el selector, seleccionara a todos los elementos que sean h1 */
+	color: red; /* Reglas o sentencias que especifican ciertas propiedades */
+	font-size: 18pt;
+
+}
+
+#titulo-destacado { /* Selecciona al elemento con el id titulo-destacado*/
+	background: blue;
+	color: white;
+}
+
+.poesia { /* Selecciona a todos los elementos de la clase poesia */
+	text-align:center; /* Alinear al centro */
+}
+
+p#principal { /* Pondra en gris el elemento #principal pero solo si es un parrafo */
+	color:gray;
+}
+
+a.noticias { /* Pondra en gris los elementos clase noticias que son links */
+	color:green;
+}
+
+p.destacados {} /* Selecciona todos los parrafos que son clase destacados */
+
+/* Selecciona a todos los elementos que sean clase destacados  
+y estan dentro de un parrafo, es decir que sean hijos de un parrafo, como
+la etiqueta strong y em ; */
+p .destacados { 
+	text-decoration: underline; /* Subraya el texto */
+}
+
+p#negro, h4 {
+	color: white;
+	background: black;
+}
+
